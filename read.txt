@@ -1,0 +1,10 @@
+Colores
+
+Paleta de Ejemplo:
+
+Primario: #E9AFA3 (Rosa Suave)
+Secundario: #4A7C59 (Verde Bosque)
+Acento: #F3D3BD (Melocotón Claro)
+Texto: #333333 (Gris Oscuro)
+Fondo: #FCF8F3 (Crema)
+

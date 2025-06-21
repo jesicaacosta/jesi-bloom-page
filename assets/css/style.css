@@ -1,0 +1,142 @@
+/* ======================================================= */
+/* ============== VARIABLES DE COLOR Y FUENTES ============= */
+/* ======================================================= */
+:root { /* Pseudo-clase que representa el elemento raíz del documento (<html>) */
+    --color-secondary: #f170a0; /* Define una variable CSS para el color secundario */
+    --color-accent: #F3D3BD; /* Define una variable CSS para el color de acento */
+    --color-text: #333333; /* Define una variable CSS para el color del texto principal */
+    --color-background: #f2f0f0; /* Define una variable CSS para el color de fondo */
+    --font-primary: 'Georgia', serif; /* Define una variable para la fuente principal (elegante) */
+    --font-secondary: 'Helvetica Neue', sans-serif; /* Define una variable para la fuente secundaria (legible) */
+} /* Fin de la definición de variables */
+
+/* ======================================================= */
+/* =================== ESTILOS GENERALES =================== */
+/* ======================================================= */
+body { /* Selector para el elemento <body> */
+    font-family: var(--font-secondary); /* Usa la fuente secundaria definida en las variables */
+    background-color: var(--color-background); /* Usa el color de fondo definido en las variables */
+    color: var(--color-text); /* Usa el color de texto definido en las variables */
+} /* Fin de los estilos del body */
+
+h1, h2, h3, h4, h5, h6 { /* Selector para todos los encabezados */
+    font-family: var(--font-primary); /* Usa la fuente primaria para dar un toque de elegancia */
+    color: var(--color-secondary); /* Usa el color secundario para los títulos */
+} /* Fin de los estilos de encabezados */
+
+/* ======================================================= */
+/* =================== ESTILOS NAVBAR ====================== */
+/* ======================================================= */
+.navbar { /* Selector para la barra de navegación */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Agrega una sombra sutil para darle profundidad */
+    background-color: #9fb9bf;
+} /* Fin de los estilos de la navbar */
+
+.navbar-brand img { /* Selector para la imagen dentro del brand de la navbar */
+    max-height: 50px; /* Limita la altura máxima del logo */
+} /* Fin estilos del logo */
+
+.nav-link { /* Selector para los enlaces de navegación */
+    font-weight: bold; /* Hace el texto del enlace más grueso */
+    color: var(--color-text); /* Asigna el color de texto principal */
+    transition: color 0.3s ease; /* Añade una transición suave al cambio de color */
+} /* Fin de estilos de nav-link */
+
+.nav-link:hover, .nav-link.active { /* Selector para el enlace activo o al pasar el mouse */
+    color: var(--color-primary) !important; /* Cambia el color al primario, !important para sobreescribir Bootstrap */
+} /* Fin de estilos hover/active */
+
+#cart-count { /* Selector para el contador del carrito */
+    font-size: 0.7rem; /* Tamaño de fuente pequeño */
+    vertical-align: top; /* Alinea el badge en la parte superior del ícono */
+} /* Fin de estilos del contador */
+
+/* ======================================================= */
+/* =================== ESTILOS CARRUSEL ==================== */
+/* ======================================================= */
+#hero-carousel .carousel-item { /* Selector para cada diapositiva del carrusel */
+    height: 85vh; /* Altura del 85% de la ventana de visualización */
+    background-size: cover; /* Asegura que la imagen de fondo cubra todo el espacio */
+    background-position: center; /* Centra la imagen de fondo */
+} /* Fin de estilos de item de carrusel */
+
+#hero-carousel .carousel-caption { /* Selector para el texto superpuesto en el carrusel */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente para mejorar la legibilidad */
+    padding: 2rem; /* Espaciado interno */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    bottom: 10%; /* Posiciona el caption más arriba */
+} /* Fin de estilos del caption */
+
+/* ======================================================= */
+/* ==================== ESTILOS BOTONES ==================== */
+/* ======================================================= */
+.btn-primary { /* Selector para el botón primario de Bootstrap */
+    background-color: var(--color-primary); /* Usa el color primario de fondo */
+    border-color: var(--color-primary); /* Usa el color primario para el borde */
+    color: #fff; /* Texto en color blanco */
+} /* Fin de estilos del botón primario */
+
+.btn-primary:hover { /* Estilo para el botón primario al pasar el mouse */
+    background-color: darken(var(--color-primary), 10%); /* Oscurece ligeramente el color de fondo */
+    border-color: darken(var(--color-primary), 10%); /* Oscurece el color del borde */
+} /* Fin de estilos hover */
+
+.btn-secondary { /* Selector para el botón secundario */
+    background-color: var(--color-secondary); /* Usa el color secundario de fondo */
+    border-color: var(--color-secondary); /* Usa el color secundario para el borde */
+    color: #fff; /* Texto en blanco */
+} /* Fin de estilos del botón secundario */
+
+.btn-secondary:hover { /* Estilo hover para botón secundario */
+    background-color: darken(var(--color-secondary), 10%); /* Oscurece el color */
+    border-color: darken(var(--color-secondary), 10%); /* Oscurece el borde */
+} /* Fin de estilos hover */
+
+/* ======================================================= */
+/* ==================== ESTILOS TARJETAS =================== */
+/* ======================================================= */
+.product-card, .card { /* Selector para tarjetas de producto y tarjetas en general */
+    border: 1px solid #ddd; /* Borde sutil */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transición suave para sombra y transformación */
+    border-radius: 0.5rem; /* Bordes redondeados */
+} /* Fin de estilos de tarjeta */
+
+.product-card:hover, .card:hover { /* Estilos al pasar el mouse sobre la tarjeta */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+    transform: translateY(-5px); /* Eleva ligeramente la tarjeta */
+} /* Fin de estilos hover */
+
+.card-footer { /* Selector para el pie de la tarjeta */
+    background-color: #ffffff; /* Fondo blanco */
+    border-top: 1px solid #eee; /* Línea de separación sutil */
+} /* Fin de estilos del pie de tarjeta */
+
+/* ======================================================= */
+/* ===================== ESTILOS FOOTER ==================== */
+/* ======================================================= */
+footer { /* Selector para el pie de página */
+    background-color: var(--color-accent) !important; /* Usa el color de acento, !important para sobreescribir bg-light */
+} /* Fin de estilos del footer */
+
+footer a { /* Selector para enlaces dentro del footer */
+    text-decoration: none; /* Quita el subrayado */
+    transition: color 0.3s ease; /* Transición suave de color */
+} /* Fin de estilos de enlace del footer */
+
+footer a:hover { /* Estilo al pasar el mouse */
+    color: var(--color-primary) !important; /* Cambia al color primario */
+} /* Fin de estilo hover */
+
+/* ======================================================= */
+/* ================== ESTILOS CARRITO ====================== */
+/* ======================================================= */
+.cart-item-image { /* Selector para la imagen del ítem en el carrito */
+    width: 80px; /* Ancho fijo */
+    height: 80px; /* Alto fijo */
+    object-fit: cover; /* La imagen cubre el espacio sin deformarse */
+} /* Fin de estilos de la imagen */
+
+.quantity-input { /* Selector para el campo de cantidad */
+    width: 60px; /* Ancho reducido */
+    text-align: center; /* Texto centrado */
+} /* Fin de estilos del input */
