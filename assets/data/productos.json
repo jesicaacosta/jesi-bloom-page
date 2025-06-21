@@ -1,0 +1,68 @@
+[
+  {
+    "id": "agenda-fitness-001",
+    "titulo": "Agenda Fitness \"Energía en Movimiento\"",
+    "descripcion": "Planificador semanal para registrar entrenamientos, comidas, agua, objetivos y progreso físico. Ideal para mantenerte activa y motivada.",
+    "imagen": "assets/images/agenda-fitness-001.jpg",
+    "alt": "Agenda Fitness Energía en Movimiento",
+    "precio": 12000.00,
+    "categoría": "Agendas",
+    "etiquetas": ["fitness", "entrenamiento", "salud", "autoestima"]
+  },
+    {
+        "id": "agenda-002",
+        "titulo": "Planner Semanal \"Foco Total\"",
+        "descripcion": "Block de 50 hojas A4 para organizar tu semana. Ideal para escritorio, con espacio para prioridades y notas.",
+        "imagen": "assets/images/agenda2.jpeg",
+        "alt": "Planner Semanal \"Foco Total\"",
+        "precio": 5000.00
+    },
+    {
+        "id": "agenda-003",
+        "titulo": "Cuaderno \"Creatividad sin Límites\"",
+        "descripcion": "Cuaderno A5 de hojas punteadas de 90gr, perfecto para bullet journal, bocetos o tomar apuntes. 80 hojas.",
+        "imagen": "assets/images/agenda3.jpeg",
+        "alt": "Cuaderno \"Creatividad sin Límites\"",
+        "precio": 0.00
+    },
+{
+    "id": "agenda-004",
+    "titulo": "Diario de Gratitud \"Momentos Mágicos\"",
+    "descripcion": "Diario encuadernado con tapa dura, 100 páginas para reflexionar y agradecer. Incluye citas inspiradoras.",
+    "imagen": "assets/images/agenda4.jpeg",
+    "alt": "Diario de Gratitud \"Momentos Mágicos\"",
+    "precio": 0.00
+},
+{
+    "id": "agenda-007",
+    "titulo": "Agenda Digital \"Planifica tu Éxito\"",
+    "descripcion": "Agenda digital interactiva para tablet, con plantillas editables y sincronización en la nube.",
+    "imagen": "assets/images/agenda7.jpeg",
+    "alt": "Agenda Digital \"Planifica tu Éxito\"",
+    "precio": 0.00
+},
+{
+    "id": "agenda-008",
+    "titulo": "Kit de Bullet Journal \"Organiza tu Creatividad\"",
+    "descripcion": "Kit completo con cuaderno punteado, lápices de colores, stickers y plantillas para empezar tu bullet journal.",
+    "imagen": "assets/images/agenda8.jpeg",
+    "alt": "Kit de Bullet Journal \"Organiza tu Creatividad\"",
+    "precio": 0.00
+},
+{
+    "id": "agenda-009",
+    "titulo": "Planificador de Proyectos \"Éxito Asegurado\"",
+    "descripcion": "Planificador diseñado para gestionar proyectos, con secciones para objetivos, tareas y seguimiento de progreso.",
+    "imagen": "assets/images/agenda9.jpeg",
+    "alt": "Planificador de Proyectos \"Éxito Asegurado\"",
+    "precio": 0.00
+},
+{
+    "id": "agenda-010",
+    "titulo": "Diario de Sueños \"Descubre tu Futuro\"",
+    "descripcion": "Diario para registrar tus sueños y metas, con ejercicios de visualización y páginas para reflexiones.",
+    "imagen": "assets/images/agenda10.jpeg",
+    "alt": "Diario de Sueños \"Descubre tu Futuro\"",
+    "precio": 0.00
+}
+]

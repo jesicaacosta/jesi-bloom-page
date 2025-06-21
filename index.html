@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">    
+
+
 </head>
 
 <body>
@@ -74,46 +82,37 @@
                 creatividad se encuentran. Explora, inspírate y encuentra las herramientas perfectas para tu día a día.
             </p>
         </section>
-        <section class="my-5">
+
+        <!-- Contenedor con Vue -->
+        <section class="my-5" id="app">
+            <!-- Título principal -->
             <h2 class="text-center mb-4">Productos Destacados</h2>
+
+            <!-- Contenedor responsive para las cards -->
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100 product-card"> <img src="assets/images/agenda1.jpeg" class="card-img-top"
-                            alt="Agenda 'Sueños en Papel'">
-                        <div class="card-body">
-                            <h5 class="card-title">Agenda "Sueños en Papel"</h5>
-                            <p class="card-text">La herramienta perfecta para planificar tus metas anuales con estilo y
-                                motivación.</p>
+                <!-- Usamos slice(0, 4) para mostrar solo los primeros 3 productos -->
+                <div class="col" v-for="(producto, index) in productos.slice(0, 3)" :key="index">
+                    <div class="card h-100 product-card">
+                        <!-- Imagen del producto -->
+                        <img :src="producto.imagen" class="card-img-top" :alt="producto.alt">
+                        <div class="card-body d-flex flex-column">
+                            <!-- Título del producto -->
+                            <h5 class="card-title">{{ producto.titulo }}</h5>
+                            <!-- Descripción corta para home -->
+                            <p class="card-text">{{ producto.descripcion.slice(0, 80) + '...' }}</p>
                         </div>
-                        <div class="card-footer text-center"> <a href="agendas.html" class="btn btn-secondary">Ver
-                                Detalles</a> </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 product-card"> <img src="assets/images/agenda2.jpeg" class="card-img-top"
-                            alt="Planner Semanal 'Foco Total'">
-                        <div class="card-body">
-                            <h5 class="card-title">Planner Semanal "Foco Total"</h5>
-                            <p class="card-text">Mantén tu semana bajo control y no pierdas de vista ninguna tarea
-                                importante.</p>
+                        <div class="card-footer text-center">
+                            <!-- Botón que lleva a la página de agendas -->
+                            <a href="agendas.html" class="btn btn-secondary">Ver Detalles</a>
                         </div>
-                        <div class="card-footer text-center"> <a href="agendas.html" class="btn btn-secondary">Ver
-                                Detalles</a> </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 product-card"> <img src="assets/images/agenda3.jpeg" class="card-img-top"
-                            alt="Cuaderno de Ideas 'Creatividad sin Límites'">
-                        <div class="card-body">
-                            <h5 class="card-title">Cuaderno "Creatividad sin Límites"</h5>
-                            <p class="card-text">Un espacio en blanco para que tus ideas más brillantes cobren vida.</p>
-                        </div>
-                        <div class="card-footer text-center"> <a href="agendas.html" class="btn btn-secondary">Ver
-                                Detalles</a> </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
+
+
     </main>
     <footer class="bg-light text-center text-lg-start pt-4">
         <div class="container p-4">
@@ -135,22 +134,56 @@
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">Contacto</h5>
                     <ul class="list-unstyled">
-                        <li><i class="bi bi-envelope-fill"></i> jesi.bloom@email.com</li>
-                        <li><i class="bi bi-whatsapp"></i> +54 9 11 1234-5678</li>
+                        <li><i class="bi bi-envelope-fill"></i> ajesicadaiana@gmail.com</li>
+                        <li><i class="bi bi-whatsapp"></i> +54 9 11 1111 1111</li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Sígueme</h5>
-                    <div> <a href="#" class="text-dark fs-4 me-3"><i class="bi bi-instagram"></i></a> <a href="#"
-                            class="text-dark fs-4 me-3"><i class="bi bi-facebook"></i></a> <a href="#"
-                            class="text-dark fs-4 me-3"><i class="bi bi-tiktok"></i></a> <a href="#"
-                            class="text-dark fs-4"><i class="bi bi-linkedin"></i></a> </div>
+                    <h5 class="text-uppercase">Seguime</h5>
+                    <div>
+                        <a href="#" class="text-dark fs-4 me-3"><i class="bi bi-instagram"></i></a> <a
+                            href="https://www.instagram.com/jesibloom_/" class="text-dark fs-4 me-3"><i
+                                class="bi bi-tiktok"></i></a> <a href="" class="text-dark fs-4"></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1);"> © 2025 Jesi Bloom - Todos los
-            derechos reservados. </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1);"> © 2025 Jesi Bloom - Todos los
+                derechos reservados. </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ...Vue... -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+    <!-- Javascript -->
     <script src="assets/js/main.js"></script>
+    <!-- ..... -->
+
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+    <!-- Script Vue para cargar los productos desde JSON -->
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    productos: [] // Array vacío que luego se llenará con los productos del JSON
+                };
+            },
+            mounted() {
+                // Al cargar la página, se hace una petición para traer los productos desde el archivo JSON
+                fetch('assets/data/productos.json')
+                    .then(response => response.json()) // Convierte la respuesta en JSON
+                    .then(data => {
+                        this.productos = data; // Guarda los productos en el array
+                    })
+                    .catch(error => console.error('Error al cargar los productos:', error));
+            }
+        }).mount('#app'); // Monta Vue en el elemento con id="app"
+    </script>
+
+
+
 </body>

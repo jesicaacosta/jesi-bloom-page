@@ -251,3 +251,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // muestren los datos correctos apenas se carga la página.
     updateCartDisplay();
 }); // Fin del evento DOMContentLoaded.
+
+
+    // ======================================================= //
+    // ====== VUE PARA RELLENADO DE INFORMACION DE AGENDAS ======= //
+    // ======================================================= //
+
+const { createApp } = Vue;
+
+createApp({
+    data() {
+        return {
+            productos: []
+        };
+    },
+    mounted() {
+        fetch('assets/data/productos.json')
+            .then(res => res.json())
+            .then(data => {
+                this.productos = data;
+            })
+            .catch(error => console.error('Error al cargar los productos:', error));
+    }
+}).mount('#app');
+
+
+

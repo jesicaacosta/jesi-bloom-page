@@ -10,6 +10,8 @@
     --font-secondary: 'Helvetica Neue', sans-serif; /* Define una variable para la fuente secundaria (legible) */
 } /* Fin de la definición de variables */
 
+
+
 /* ======================================================= */
 /* =================== ESTILOS GENERALES =================== */
 /* ======================================================= */
@@ -21,7 +23,10 @@ body { /* Selector para el elemento <body> */
 
 h1, h2, h3, h4, h5, h6 { /* Selector para todos los encabezados */
     font-family: var(--font-primary); /* Usa la fuente primaria para dar un toque de elegancia */
-    color: var(--color-secondary); /* Usa el color secundario para los títulos */
+    color: var(--color-secondary); /* Usa el color secundario para los títulos */ 
+    font-family: "IBM Plex Sans", sans-serif;
+      
+    
 } /* Fin de los estilos de encabezados */
 
 /* ======================================================= */
@@ -30,10 +35,12 @@ h1, h2, h3, h4, h5, h6 { /* Selector para todos los encabezados */
 .navbar { /* Selector para la barra de navegación */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Agrega una sombra sutil para darle profundidad */
     background-color: #9fb9bf;
+    height: 15vh;
 } /* Fin de los estilos de la navbar */
 
+
 .navbar-brand img { /* Selector para la imagen dentro del brand de la navbar */
-    max-height: 50px; /* Limita la altura máxima del logo */
+    max-height: 70px; /* Limita la altura máxima del logo */
 } /* Fin estilos del logo */
 
 .nav-link { /* Selector para los enlaces de navegación */
@@ -46,6 +53,13 @@ h1, h2, h3, h4, h5, h6 { /* Selector para todos los encabezados */
     color: var(--color-primary) !important; /* Cambia el color al primario, !important para sobreescribir Bootstrap */
 } /* Fin de estilos hover/active */
 
+
+.navbar a {
+    font-family: "Inter", sans-serif;
+    color: var(--color-secondary); /* Color del texto de los enlaces */
+    text-transform: uppercase;
+}
+
 #cart-count { /* Selector para el contador del carrito */
     font-size: 0.7rem; /* Tamaño de fuente pequeño */
     vertical-align: top; /* Alinea el badge en la parte superior del ícono */
@@ -55,13 +69,13 @@ h1, h2, h3, h4, h5, h6 { /* Selector para todos los encabezados */
 /* =================== ESTILOS CARRUSEL ==================== */
 /* ======================================================= */
 #hero-carousel .carousel-item { /* Selector para cada diapositiva del carrusel */
-    height: 85vh; /* Altura del 85% de la ventana de visualización */
+    height: 65vh; /* Altura del 85% de la ventana de visualización */
     background-size: cover; /* Asegura que la imagen de fondo cubra todo el espacio */
     background-position: center; /* Centra la imagen de fondo */
 } /* Fin de estilos de item de carrusel */
 
 #hero-carousel .carousel-caption { /* Selector para el texto superpuesto en el carrusel */
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente para mejorar la legibilidad */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para mejorar la legibilidad */
     padding: 2rem; /* Espaciado interno */
     border-radius: 0.5rem; /* Bordes redondeados */
     bottom: 10%; /* Posiciona el caption más arriba */
@@ -140,3 +154,21 @@ footer a:hover { /* Estilo al pasar el mouse */
     width: 60px; /* Ancho reducido */
     text-align: center; /* Texto centrado */
 } /* Fin de estilos del input */
+
+.bi-instagram,  .bi-tiktok {
+    color: var(--color-secondary); /* Color secundario para iconos de redes sociales */
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    transition: color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+
+
+
+
+
+
+
+
+
+
+
