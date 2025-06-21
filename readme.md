@@ -7,3 +7,7 @@ Hecho con amor y muchas ganas de aprender. 🌸✨
 
 ## Autor
 Jesica Acosta – @jesicaacosta
+
+## Uso de JSON para tomar informacion de las agendas
+
+HTML - CSS - JS - VUE - 
