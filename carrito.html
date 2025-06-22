@@ -96,19 +96,5 @@
     <script src="assets/js/main.js"></script>
 </body>
 
-</html> ```
+</html>
 
----
-
-### **Cómo Conectar tu Página de Agendas (Vue.js) con el Carrito**
-
-Para que el `main.js` que te di antes pueda "ver" los productos que generas con Vue, solo tienes que hacer un pequeño
-ajuste en el botón "Añadir al Carrito" dentro de tu plantilla de Vue.
-
-Usando el JSON que me mostraste, tu botón debería verse así:
-
-```html
-<button class="btn btn-secondary w-100 add-to-cart-btn" :data-id="producto.id" :data-name="producto.titulo"
-    :data-price="producto.precio" :data-image="producto.imagen">
-    <i class="bi bi-cart-plus-fill me-2"></i>Añadir al Carrito
-</button>
