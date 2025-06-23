@@ -15,7 +15,9 @@
         "descripcion": "Block de 50 hojas A4 para organizar tu semana. Ideal para escritorio, con espacio para prioridades y notas.",
         "imagen": "assets/images/agenda2.jpeg",
         "alt": "Planner Semanal \"Foco Total\"",
-        "precio": 5000.00
+        "precio": 5000.00,
+        "categoría": "Agendas",
+        "etiquetas": ["organización", "productividad", "planificación"]
     },
     {
         "id": "agenda-003",
@@ -23,7 +25,9 @@
         "descripcion": "Cuaderno A5 de hojas punteadas de 90gr, perfecto para bullet journal, bocetos o tomar apuntes. 80 hojas.",
         "imagen": "assets/images/agenda3.jpeg",
         "alt": "Cuaderno \"Creatividad sin Límites\"",
-        "precio": 0.00
+        "precio": 0.00,
+        "categoría": "Agendas",
+        "etiquetas": ["creatividad", "bullet journal", "notas"]
     },
 {
     "id": "agenda-004",
@@ -31,7 +35,9 @@
     "descripcion": "Diario encuadernado con tapa dura, 100 páginas para reflexionar y agradecer. Incluye citas inspiradoras.",
     "imagen": "assets/images/agenda4.jpeg",
     "alt": "Diario de Gratitud \"Momentos Mágicos\"",
-    "precio": 0.00
+    "precio": 0.00,
+    "categoría": "Agendas",
+    "etiquetas": ["gratitud", "reflexión", "inspiración"]
 },
 {
     "id": "agenda-007",
@@ -39,7 +45,9 @@
     "descripcion": "Agenda digital interactiva para tablet, con plantillas editables y sincronización en la nube.",
     "imagen": "assets/images/agenda7.jpeg",
     "alt": "Agenda Digital \"Planifica tu Éxito\"",
-    "precio": 0.00
+    "precio": 0.00,
+    "categoría": "Agendas",
+    "etiquetas": ["digital", "tecnología", "planificación"]
 },
 {
     "id": "agenda-008",
@@ -55,7 +63,9 @@
     "descripcion": "Planificador diseñado para gestionar proyectos, con secciones para objetivos, tareas y seguimiento de progreso.",
     "imagen": "assets/images/agenda9.jpeg",
     "alt": "Planificador de Proyectos \"Éxito Asegurado\"",
-    "precio": 0.00
+    "precio": 0.00,
+    "categoría": "Agendas",
+    "etiquetas": ["proyectos", "gestión", "organización"]
 },
 {
     "id": "agenda-010",
@@ -63,6 +73,8 @@
     "descripcion": "Diario para registrar tus sueños y metas, con ejercicios de visualización y páginas para reflexiones.",
     "imagen": "assets/images/agenda10.jpeg",
     "alt": "Diario de Sueños \"Descubre tu Futuro\"",
-    "precio": 0.00
+    "precio": 0.00,
+    "categoría": "Agendas",
+    "etiquetas": ["sueños", "metas", "visualización"]
 }
 ]

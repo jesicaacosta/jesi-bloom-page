@@ -1,3 +1,6 @@
+// ✅ ARCHIVO: assets/js/main.js (VERSIÓN CORREGIDA Y LIMPIA)
+// Este archivo ahora solo se encarga de la lógica del carrito de compras.
+
 // Espera a que todo el contenido del DOM (la página HTML) esté completamente cargado y parseado.
 document.addEventListener('DOMContentLoaded', function() {
     // Declaración de una variable 'cart' para almacenar los productos del carrito.
@@ -91,8 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
             itemElement.className = 'row mb-4 d-flex justify-content-between align-items-center';
 
             // Define el HTML interno para este ítem.
-            // Incluye la imagen, nombre, precio, campo de cantidad y botón para eliminar.
-            // Se usan atributos data-* (ej. data-id) para almacenar información relevante en los elementos HTML.
             itemElement.innerHTML = `
                 <div class="col-md-2 col-lg-2 col-xl-2">
                     <img src="${item.image}" class="img-fluid rounded-3 cart-item-image" alt="${item.name}">
@@ -192,88 +193,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ======================================================= //
-    // ====== INTEGRACIÓN CON MERCADO PAGO (FRONT-END) ======= //
-    // ======================================================= //
-    // Esta función PREPARA los datos para enviarlos a tu backend.
-    // El backend es quien debe comunicarse de forma segura con Mercado Pago.
+    // Función de simulación para el checkout de Mercado Pago
     async function handleMercadoPagoCheckout() {
-        // 1. Prepara el array de ítems en el formato que Mercado Pago necesita.
-        const items = cart.map(item => {
-            return {
-                title: item.name,
-                quantity: item.quantity,
-                unit_price: item.price
-            };
-        });
+        const items = cart.map(item => ({
+            title: item.name,
+            quantity: item.quantity,
+            unit_price: item.price
+        }));
 
-        // 2. Muestra los datos en la consola para que veas lo que se enviaría.
         console.log("Enviando al backend para crear preferencia de pago:", items);
-        alert("Revisa la consola (F12) para ver los datos que se enviarían a tu backend.");
-
-        // --- INICIO DE LA PARTE QUE NECESITA BACKEND ---
-        // 3. Realiza una petición a tu propio servidor (backend).
-        //    Debes reemplazar 'https://tu-servidor.com/crear-preferencia' con la URL de tu backend.
-        try {
-            // Usa 'fetch' para enviar los datos de los ítems a tu servidor.
-            // La petición es de tipo POST y el cuerpo (body) contiene los ítems en formato JSON.
-            const response = await fetch('https://tu-servidor.com/crear-preferencia', {
-                method: 'POST', // Método de la petición
-                headers: {
-                    'Content-Type': 'application/json' // Tipo de contenido que se envía
-                },
-                body: JSON.stringify({ items: items }) // El cuerpo de la petición con los datos
-            });
-
-            // Espera la respuesta de tu servidor y la convierte a JSON.
-            // Tu backend debería devolver el ID de la preferencia de pago creada en Mercado Pago.
-            const preference = await response.json();
-            
-            // 4. Redirige al usuario al checkout de Mercado Pago.
-            //    Aquí usarías el SDK de Mercado Pago para renderizar el botón de pago
-            //    o redirigir al init_point que tu backend te proporcionó.
-            //    Ejemplo (necesitarás el SDK de Mercado Pago JS V2):
-            //    const mp = new MercadoPago('TU_PUBLIC_KEY');
-            //    mp.checkout({ preference: { id: preference.id } });
-            
-            // Muestra una alerta simulando que el proceso funcionó.
-            alert("¡Redirigiendo a Mercado Pago! (Esto es una simulación)");
-
-        } catch (error) {
-            // Si hay un error (ej. tu backend no responde), lo muestra en la consola y alerta al usuario.
-            console.error("Error al crear la preferencia de pago:", error);
-            alert("Hubo un error al conectar con el sistema de pago. Por favor, intenta de nuevo.");
-        }
-        // --- FIN DE LA PARTE QUE NECESITA BACKEND ---
+        alert("Simulación: Revisa la consola (F12) para ver los datos que se enviarían a tu backend para Mercado Pago.");
+        // Aquí iría la lógica de fetch a tu servidor real.
     }
 
     // Llama a la función de actualización inicial para que el contador y la página del carrito
     // muestren los datos correctos apenas se carga la página.
     updateCartDisplay();
 }); // Fin del evento DOMContentLoaded.
-
-
-    // ======================================================= //
-    // ====== VUE PARA RELLENADO DE INFORMACION DE AGENDAS ======= //
-    // ======================================================= //
-
-const { createApp } = Vue;
-
-createApp({
-    data() {
-        return {
-            productos: []
-        };
-    },
-    mounted() {
-        fetch('assets/data/productos.json')
-            .then(res => res.json())
-            .then(data => {
-                this.productos = data;
-            })
-            .catch(error => console.error('Error al cargar los productos:', error));
-    }
-}).mount('#app');
-
-
-

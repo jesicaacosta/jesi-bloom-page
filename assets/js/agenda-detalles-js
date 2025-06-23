@@ -1,0 +1,46 @@
+// Espera a que todo el contenido del DOM esté cargado para empezar a trabajar.
+document.addEventListener('DOMContentLoaded', () => {
+    // Obtén el parámetro id de la URL
+    const params = new URLSearchParams(window.location.search);
+    const productoId = params.get('id');
+
+    // Carga los productos desde el JSON real
+    fetch('assets/data/productos.json')
+        .then(res => res.json())
+        .then(productos => {
+            // Busca el producto por id
+            const productoSeleccionado = productos.find(producto => producto.id === productoId);
+
+            if (productoSeleccionado) {
+                document.title = `Jesi Bloom - ${productoSeleccionado.titulo}`;
+                document.getElementById('producto-titulo').textContent = productoSeleccionado.titulo;
+                document.getElementById('producto-precio').textContent = `$ ${productoSeleccionado.precio.toFixed(2)}`;
+                document.getElementById('producto-descripcion-corta').textContent = productoSeleccionado.descripcion;
+                document.getElementById('producto-descripcion-larga').textContent = productoSeleccionado.descripcion;
+                document.getElementById('producto-imagen-principal').src = productoSeleccionado.imagen;
+                document.getElementById('producto-imagen-principal').alt = productoSeleccionado.alt;
+                document.getElementById('producto-sku').textContent = productoSeleccionado.id;
+
+                let infoAdicionalHTML = `
+                    <p><strong>Categoría:</strong> ${productoSeleccionado.categoría || ''}</p>
+                    <p><strong>Etiquetas:</strong> ${(productoSeleccionado.etiquetas || []).join(', ')}</p>
+                `;
+                document.getElementById('producto-info-adicional').innerHTML = infoAdicionalHTML;
+
+                // Configura el botón para el carrito
+                const botonAgregar = document.getElementById('btn-agregar-al-carrito');
+                botonAgregar.dataset.id = productoSeleccionado.id;
+                botonAgregar.dataset.name = productoSeleccionado.titulo;
+                botonAgregar.dataset.price = productoSeleccionado.precio;
+                botonAgregar.dataset.image = productoSeleccionado.imagen;
+            } else {
+                // Producto no encontrado
+                const container = document.getElementById('product-detail-container');
+                container.innerHTML = '<div class="col-12 text-center"><h2>Producto no encontrado</h2><p>El producto que buscas no existe o fue removido. <a href="agendas.html">Volver al catálogo</a>.</p></div>';
+            }
+        })
+        .catch(() => {
+            const container = document.getElementById('product-detail-container');
+            container.innerHTML = '<div class="col-12 text-center"><h2>Error al cargar los productos</h2></div>';
+        });
+});
